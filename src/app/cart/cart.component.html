@@ -1,0 +1,40 @@
+<app-nav></app-nav>
+<div class="container-fluid">
+<div class="cart-container">
+  <h3>Cart</h3>
+  <div *ngIf="items.length > 0" class="clear-cart-btn">
+    <button class="btn btn-primary btn-cart mb-2 mr-2" (click)="clearCart()">Clear Cart</button>
+    <a [routerLink]="['/shipping-details']" class="btn btn-primary btn-cart mb-2">Buy</a>
+  </div>
+  <div *ngIf="items.length <= 0">
+    <a href="#">Back to home page</a>
+  </div>
+  <div class="cart-item" *ngFor="let item of items">
+    <div class="card row align-items-center">
+      
+      <img class="cart-image col-xl-1" src="assets/phone{{item.id}}.jpg" alt="Card image cap">
+      
+      <div class="col-xl-5">{{ item.name }}</div>
+     
+      <div class=" col-xl-2">
+      <div class="input-group inc-dec-block">
+        <div class="input-group-prepend">
+          <button class="input-group-text btn-cart" id="basic-addon1" (click)= "decProductCount(item)">-</button>
+        </div>
+        <input type="text" value={{item.addedToCart}} class="form-control text-center counter" placeholder="Count"
+          aria-label="Username" aria-describedby="basic-addon1" disabled>
+        <div class="input-group-append">
+          <button class="input-group-text btn-cart" id="basic-addon1" (click)= "incProductCount(item)">+</button>
+        </div>
+      </div>
+    </div>
+      <div class="col-xl-2">{{item.priceVal*item.addedToCart | currency:"&#8377;"}}</div>
+      
+      <div class="col-xl-2"><button class="btn btn-primary btn-cart" (click)="removeFromCart(item)">Remove</button>   </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="items.length > 0" class="total text-right"><strong>Total: {{total | currency:"&#8377;"}}</strong></div>
+</div>
+</div>

@@ -1,0 +1,116 @@
+<app-nav></app-nav>
+<div class="container-fluid">
+    <div class="cart-container">
+        <div class="row">
+            <div class="col-xl-6 ">
+                <div class="shipping-header mb-2">
+                    SHIPPING ADDRESS
+                </div>
+                <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" class="ml-2">
+
+                    <div class="form-group col-xl-10  pl-0 ml-0">
+                        <label for="exampleInputEmail1">First Name*</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter First Name"
+                            formControlName="fname">
+
+                    </div>
+
+                    <div class="form-group col-xl-10  pl-0 ml-0">
+                        <label for="exampleInputEmail1">Middle Name</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Middle Name"
+                            formControlName="mname">
+
+                    </div>
+
+                    <div class="form-group col-xl-10  pl-0 ml-0">
+                        <label for="exampleInputEmail1">Last Name</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Last Name"
+                            formControlName="lname">
+
+                    </div>
+                    <div class="form-group col-xl-10  pl-0 ml-0">
+                        <label for="exampleInputEmail1">Address*</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Address1"
+                            formControlName="address1">
+
+                    </div>
+
+
+                    <div class="form-group col-xl-10  pl-0 ml-0">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"
+                            formControlName="email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+
+                    <div class="form-group col-xl-10  pl-0 ml-0">
+                        <label for="exampleInputEmail1">City/State/Zip</label>
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <input type="city" class="form-control" id="exampleInputEmail1" placeholder="Enter City"
+                                    formControlName="city">
+                            </div>
+                            <div class="col-xl-4">
+                                <input type="state" class="form-control" id="exampleInputEmail1"
+                                    placeholder="Enter State" formControlName="state">
+                            </div>
+                            <div class="col-xl-4">
+                                <input type="zip" class="form-control" id="exampleInputEmail1" placeholder="Enter Zip"
+                                    formControlName="zip">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group col-xl-10  pl-0 ml-0">
+                        <label for="exampleInputEmail1">Country</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1"
+                            placeholder="Enter Country Name" formControlName="country">
+
+                    </div>
+
+                    <div class="form-group col-xl-10  pl-0 ml-0">
+                        <label for="exampleInputEmail1">Phone Number</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1"
+                            placeholder="Enter Phone Number" formControlName="phoneNumber">
+
+                    </div>
+
+                    <button class="btn btn-primary btn-cart-items" type="submit">Purchase</button>
+
+                </form>
+            </div>
+            <div class="col-xl-6">
+                <div class="shipping-header mb-2">
+                    YOUR ORDER
+                </div>
+                <div class="total-items">
+                    <div class="cart-item" *ngFor="let item of items">
+
+                        <div class="row align-items-center">
+
+                            <img class="cart-image col-xl-1" src="assets/phone{{item.id}}.jpg" alt="Card image cap">
+
+                            <div class="col-xl-5">{{ item.name }}</div>
+
+                            <div class="col-xl-3">{{item.priceVal*item.addedToCart | currency:"&#8377;"}}</div>
+                            <div class="col-xl-3">Qty: {{ item.addedToCart }}</div>
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="shipping-summary text-right mt-3">
+                    <div>Subtotal : {{ total | currency:"&#8377;"}}</div>
+                    <div>Shipping : ₹0.00</div>
+                    <div>Tax : ₹0.00</div>
+                    <strong>Total : {{ total | currency:"&#8377;"}}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

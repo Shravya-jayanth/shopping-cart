@@ -1,0 +1,29 @@
+.cart-container {
+  padding-top: 100px;
+  .btn-cart-items {
+    color: white;
+    background-color: #563d7c;
+    border-color: #563d7c;
+  }
+  .btn-cart-items:hover {
+    color: white;
+    background-color: #563d7c;
+    border-color: #563d7c;
+  }
+  .shipping-header {
+    background-color: #e0d9eb;
+    padding: 8px;
+    color: #563d7c;
+  }
+  .cart-item {
+    border-bottom: 2px solid #e0d9eb;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  .total-items
+  {
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

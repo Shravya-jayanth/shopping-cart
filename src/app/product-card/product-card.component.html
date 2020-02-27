@@ -1,0 +1,15 @@
+<app-nav></app-nav>
+<div class="container-fluid">
+	<div class="row product-card-wrapper">
+		<div class="col-xl-3" *ngFor="let product of productsdata;">
+			<div class="card text-center">
+				<img class="card-img-top" src="assets/phone{{product.id}}.jpg" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">{{product.name}}</h5>
+					<p class="card-text">{{product.description}}</p>
+					<p class="card-text"><small class="text-muted">{{product.priceVal | currency:"&#8377;"}}</small></p>
+					<button class="btn btn-primary btn-cart" (click)="addToCart(product)">Add to cart</button>
+				</div>
+			</div>
+		</div>
+	</div>

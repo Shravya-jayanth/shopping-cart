@@ -1,0 +1,30 @@
+.product-card-wrapper {
+  padding-top: 100px;
+  
+  img {
+    height: 140px;
+    width: 100px;
+  }
+  .card {
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+    .btn-cart {
+      background-color: #563d7c;
+      border-color: #563d7c;
+      :hover {
+        background-color: #9268d2;
+        border-color: #9268d2;
+      }
+    }
+    .btn-cart:hover {
+      background-color: #7151a3;
+      border-color: #7151a3;
+    }
+  }
+  .card:hover {
+    background-color: #e0d9eb;
+  }
+}

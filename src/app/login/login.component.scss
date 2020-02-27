@@ -1,0 +1,27 @@
+.login-page {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(../../assets/bg4.jfif);
+  //background-color: #563d7c;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 2;
+  .card {
+    width: 450px;
+  }
+  .btn-cart-items {
+    color: white;
+    background-color: #563d7c;
+    border-color: #563d7c;
+  }
+  .btn-cart-items:hover {
+    color: white;
+    background-color: #563d7c;
+    border-color: #563d7c;
+  }
+  .cp {
+    cursor: pointer;
+  }
+}
